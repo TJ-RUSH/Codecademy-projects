@@ -1,0 +1,32 @@
+// assign runners a race number and time depending on there age and time.
+
+let raceNumber = Math.floor(Math.random() * 1000);
+let earlyRegister = true;
+let runnerAge = 109;
+
+/* this line was incorect as I had 'return raceNumber' which was trying to return raceNUmber to the if function, rather then the variable of the same name*/
+
+if (earlyRegister === true && runnerAge > 18) {
+raceNumber += 1000
+};
+
+/* earlyRegister === true would be the same as just writing earlyRegister since it is a boolean checking against true.
+ I will leave it as is for now as it works and I dont know what instructions the task will ask later. */
+
+if (earlyRegister === true && runnerAge > 18){console.log(`Your race time is 9:30 am. Your race Number is ${raceNumber}`);} 
+else if (earlyRegister !== true && runnerAge > 18){console.log(`Your race time is 11:00 am. Your race Number is ${raceNumber}`)}
+else if(runnerAge < 18){console.log(`Your race time is 12:30 pm. Your race Number is ${raceNumber}`)}
+else console.log('See Registration Desk')
+
+/* early adult are assigned a number from 1001-2000 and run at 9:30
+late adults are assigned a number from 1-1000 and run at 11:00
+all kids are siigned a number also from 1-1000 and run at 12:30
+18 year olds are told to check the registration desk.
+
+a further problem to come back to, not it the task list, would be to check if each number is unique. 
+I dont think I know how to do this yet but I would presumably have to create an array with all runnerNumbers generated so far.
+We could possible assign the runner number from this array, with 'generatedRunnerNumber[0]'
+or if we knew approximatly how many people would be patricipating, pre make the array and then assign values from it, then .pop.
+Although the best and easiest solution would probably be assigning accending numbers, 
+runnerNumber ++. 
+But these are solutions for diffrent problems.*/
