@@ -23,7 +23,7 @@ late adults are assigned a number from 1-1000 and run at 11:00
 all kids are siigned a number also from 1-1000 and run at 12:30
 18 year olds are told to check the registration desk.
 
-a further problem to come back to, not it the task list, would be to check if each number is unique. 
+a further problem to come back to, not in the task list, would be to check if each number is unique. 
 I dont think I know how to do this yet but I would presumably have to create an array with all runnerNumbers generated so far.
 We could possible assign the runner number from this array, with 'generatedRunnerNumber[0]'
 or if we knew approximatly how many people would be patricipating, pre make the array and then assign values from it, then .pop.
