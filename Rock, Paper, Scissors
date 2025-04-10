@@ -1,0 +1,63 @@
+let userInput = "";
+
+const getUserChoice = userInput => {
+  userInput = userInput.toLowerCase();
+  if (userInput === "rock" || userInput === "paper" || userInput === "scissors" || userInput === "trebuchet") {
+    return userInput;
+  } else {console.log("You cant pick that!");
+  }
+};
+
+const getComputerChoice = () => {
+let computerRandomNumber = Math.floor(Math.random()*3);
+if (computerRandomNumber === 0) {
+return "rock";
+}
+else if (computerRandomNumber === 1){
+  return "paper";
+}
+else {
+  return "scissors";
+}
+};
+
+const determineWinner = (userChoice, computerChoice) => {
+  if (userChoice === computerChoice){
+    return 'Game tied';
+  }
+  if (userChoice === 'rock'){
+    if (computerChoice === 'scissors'){
+      return 'You won';
+    }
+    else { return 'You lost';
+    }
+  }
+  if (userChoice === 'paper'){
+    if (computerChoice === 'rock'){
+      return 'You won';
+    }
+    else {return 'You lost';
+    }
+  }
+  if (userChoice === 'scissors'){
+    if (computerChoice === 'paper'){
+      return 'You won';
+    }
+    else { return 'You lost';
+    }
+  }
+  if (userChoice === 'trebuchet'){
+    return 'You won, I wonder why?';
+  }
+};
+
+const playGame = () => {
+const userChoice = getUserChoice("rock");
+console.log(`You picked ${userChoice}`);
+let computerChoice = getComputerChoice();
+console.log(`They picked ${computerChoice}`);
+
+console.log(determineWinner(userChoice, computerChoice));
+};
+
+playGame();
