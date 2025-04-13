@@ -1,0 +1,66 @@
+// Codecademy sleep debt calculator.
+
+let getSleepHours = day => {
+switch (day){
+  case 'Monday': 
+  return 8;
+  break;
+
+  case 'Tuesday':
+  return 8;
+  break;
+
+  case 'Wednesday':
+  return 8;
+  break;
+
+  case 'Thursday':
+  return 7;
+  break;
+
+  case 'Friday':
+  return 8;
+  break;
+
+  case 'Saturday':
+  return 9;
+  break;
+
+  case 'Sunday':
+  return 10;
+  break;
+}
+};
+
+let getActualSleepHours = () => 
+getSleepHours('Monday') +
+getSleepHours('Tuesday') +
+getSleepHours('Wednesday') +
+getSleepHours('Thursday') +
+getSleepHours('Friday') +
+getSleepHours('Saturday') +
+getSleepHours('Sunday');
+
+
+let getIdealSleepHours = () =>{
+  let idealHours = 8.5;
+  return idealHours* 7
+};
+
+let calculateSleepDebt = () =>{
+let actualSleepHours = getActualSleepHours();
+let idealSleepHours = getIdealSleepHours();
+let actualSleepDebt = Math.abs(idealSleepHours - actualSleepHours);
+
+if(actualSleepHours === idealSleepHours) {
+console.log(`Your target was ${idealSleepHours}. You sleapt ${actualSleepHours} which is perfect`)
+}
+else if (actualSleepHours >= idealSleepHours){
+  console.log(`Your target was ${idealSleepHours}. You slept ${actualSleepHours}, you overslept ${actualSleepDebt} hours!`)
+}
+else if (actualSleepHours <= idealSleepHours){
+  console.log(`Your target was ${idealSleepHours}. You slept ${actualSleepHours}, you underslept, again... Take. More. Naps! You have ${actualSleepDebt} hours to catch up on.`)
+}
+};
+
+calculateSleepDebt()
